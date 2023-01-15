@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <a class="logo">Olá, {{username}}</a>
+        <ul class="nav-list">
+            <li><a href="/meuslembretes">Meus Lembretes</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="secao2">
+    <button class="botao1" type="button" onclick="novolembrete('botao1')">Novo Lembrete</button>
+    <form action="/" method="post" class="calendario">
+        <textarea class="area" name="texto" rows="10" cols="50" placeholder="Escreva aqui"></textarea>
+        <input type="date" name="data">
+        <input type="submit">
+    </form>
+</section>
+    
+<script>
+    function novolembrete(element) {
+        if (element === 'botao1') {
+            document.querySelector(".botao1").style.display = "none";
+            document.querySelector(".area").style.display = "block";  
+            document.querySelector('.calendario').style.display = "flex";        
+        }
+    }
+</script>
+{% endblock %}

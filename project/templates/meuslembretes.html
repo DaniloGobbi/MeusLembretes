@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meus Lembretes
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <a class="logo">Olá, {{username}}</a>
+        <ul class="nav-list">
+            <li><a href="/meuslembretes">Meus Lembretes</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="secao">
+<table class="tabela">
+<tr>
+    <th>Lembretes</th>
+    <th>Data</th>
+</tr>
+{% for row in result %}
+<tr>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+</tr>
+{% endfor %}
+</table>
+</section>
+{% endblock %}
