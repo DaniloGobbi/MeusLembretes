@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+<form action="/login" method="post" class="tabela2">
+    <input type="text" name="username" placeholder="Usuário">
+    <input type="password" name="password" placeholder="Senha">
+    <input type="submit" value="Login">
+    <a href="/register">Registrar</a>
+</form>
+
+{% endblock %}
